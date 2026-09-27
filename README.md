@@ -1,6 +1,9 @@
 ## Alpha Ring
 A Modding Tool for MCC
 
+> ### ⬇️ Just want to play? [Download INSTALL-AlphaRing-Local-Co-Op.zip](https://github.com/nrkorte/AlphaRing-Local-Co-Op-Mod/raw/master/INSTALL-AlphaRing-Local-Co-Op.zip)
+> It contains the mod (`WTSAPI32.dll`) and a step-by-step `HOW TO INSTALL.txt` that shows how to find the right game folder, install the mod and set up splitscreen.
+
 > This is a continuation of [WinterSquire/AlphaRing](https://github.com/WinterSquire/AlphaRing), which has been archived.
 > It is based on the 1.3528.0.0 release and adds:
 > * Player 1 can use a controller in splitscreen (on by default), so all players can use controllers.
@@ -21,9 +24,9 @@ A Modding Tool for MCC
 ### Installation
 Make sure you have the latest [Microsoft Visual C++ Redistributable](https://aka.ms/vs/17/release/vc_redist.x64.exe) installed.
 
-Download the latest stable build from the [Releases](https://github.com/WinterSquire/AlphaRing/releases) page.
+Download [INSTALL-AlphaRing-Local-Co-Op.zip](https://github.com/nrkorte/AlphaRing-Local-Co-Op-Mod/raw/master/INSTALL-AlphaRing-Local-Co-Op.zip) and follow `HOW TO INSTALL.txt` inside it.
 
-Place the DLL into the "Halo The Master Chief Collection\mcc\binaries\win64" directory and launch the game with EAC off.
+In short: place `WTSAPI32.dll` into the "Halo The Master Chief Collection\mcc\binaries\win64" directory and launch the game with EAC off. Built for MCC 1.3528.0.0.
 
 For Running on Steam Deck/Linux, add the following command in the Steam Game Launch Options:
 ``` 
