@@ -34,6 +34,7 @@
         static int get_index(__int64 xuid);
         static Profile_t* get_profile(int index);
         static CInputDevice* get_controller(int index);
+        static void assign_default_controllers(bool player0_use_km);
 
     private:
         static void __fastcall set_vibration(CGameManager* self, DWORD dwUserIndex, XINPUT_VIBRATION *pVibration);

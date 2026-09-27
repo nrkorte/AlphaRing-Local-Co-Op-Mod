@@ -1,8 +1,10 @@
 ## Alpha Ring
 A Modding Tool for MCC
 
-[![Build status](https://ci.appveyor.com/api/projects/status/o3qbtc7jirw81xmb?svg=true)](https://ci.appveyor.com/project/WinterSquire/alpharing)
-[![](https://dcbadge.limes.pink/api/server/https://discord.gg/TUyAnCrpuz)](https://discord.gg/TUyAnCrpuz)
+> This is a continuation of [WinterSquire/AlphaRing](https://github.com/WinterSquire/AlphaRing), which has been archived.
+> It is based on the 1.3528.0.0 release and adds:
+> * Player 1 can use a controller in splitscreen (on by default), so all players can use controllers.
+> * Splitscreen settings, player names, controllers and profiles can be saved and are loaded at startup.
 
 ### Showcase
 
@@ -34,6 +36,20 @@ Toggle menu: `F4` or `Controller Back` + `Controller Start`
 To navigate using Controller use the `Right Stick` to move the mouse and `RB` to click.
 
 When the menu is open, game input is disabled.
+
+#### Splitscreen
+1. Open the menu and select `Splitscreen` in the menu bar.
+2. Click `Enable` and set `Players` to the number of players.
+3. In each player's tab, choose which controller that player uses under `Input`.
+4. Click `Save` to keep these settings for next time.
+
+By default every player uses a controller (Player 1 → Controller 1, Player 2 → Controller 2, ...).
+To let Player 1 use keyboard and mouse instead, turn on `Options` → `Enable K/M for player1`; Players 2-4 then move to Controllers 1-3.
+If two players end up swapped, change their `Input` selection, since Windows numbers controllers in the order it detects them.
+
+To keep other players' in-game settings (sensitivity, button layout, etc.), use `Load Profile` in each player's tab while in game, adjust it under `Profile` / `Gamepad Mapping`, then click `Save`.
+
+Settings are saved to `alpha_ring/splitscreen.json` in the MCC install folder and loaded automatically at startup. Delete this file to reset to defaults.
 
 ### Bugs Report
 Submit it in the [Issues](https://github.com/WinterSquire/AlphaRing/issues) page.

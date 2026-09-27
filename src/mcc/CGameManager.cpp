@@ -12,7 +12,8 @@ CGameManager::Profile_t* CGameManager::get_profile(int index) {return container.
 
 ProfileContainer_t::ProfileContainer_t() {
     __int64 guid[2];
-    const int controller_map[4] {3, 0, 1, 2};
+    // matches the default of b_player0_use_km (false): player N uses controller N
+    const int controller_map[4] {0, 1, 2, 3};
     memset(this, 0, sizeof(ProfileContainer_t));
 
     CoCreateGuid((GUID*)guid);
@@ -60,6 +61,12 @@ CInputDevice *CGameManager::get_controller(int index) {
         return nullptr;
     else
         return mng->p_input_device[controller_index];
+}
+
+void CGameManager::assign_default_controllers(bool player0_use_km) {
+    // with K/M, player 1 has no controller so players 2-4 take controllers 1-3
+    for (int i = 0; i < 4; ++i)
+        container.profiles[i].controller_index = player0_use_km ? (i ? i - 1 : 4) : i;
 }
 
 int CGameManager::get_index(__int64 xuid) {
