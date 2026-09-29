@@ -33,6 +33,31 @@ For Running on Steam Deck/Linux, add the following command in the Steam Game Lau
 WINEDLLOVERRIDES="WTSAPI32=n,b" %command%
 ```
 
+### Switching the mod on and off
+The mod only works with anti-cheat (EAC) off. To play online with EAC on, you don't have to uninstall it. `tools/ToggleAlphaRing` builds a small `Toggle-AlphaRing.exe` that switches it off and on with a double-click.
+
+**Build it (one time):**
+1. Download or clone this repository.
+2. Double-click `tools/ToggleAlphaRing/build.bat`. It uses the C# compiler that ships with Windows 10/11, so nothing else needs to be installed.
+3. `Toggle-AlphaRing.exe` appears in the same folder. You can move it anywhere, such as your desktop.
+
+**Use it:**
+1. Close MCC.
+2. Double-click `Toggle-AlphaRing.exe` and click `Yes` on the administrator prompt.
+3. A message shows the new state:
+   * `DISABLED`: launch MCC normally, with anti-cheat on.
+   * `ENABLED`: launch MCC with anti-cheat off.
+
+When the mod is disabled, the exe renames `WTSAPI32.dll` to `WTSAPI32.dll.disabled`, so the game skips it. Running the exe again renames it back. The exe finds MCC automatically through your Steam libraries, including libraries on other drives. It works with Steam installs only.
+
+If the mod isn't installed yet, put `WTSAPI32.dll` in the same folder as `Toggle-AlphaRing.exe` and run it; it copies the DLL into the game folder for you.
+
+| File | Purpose |
+|--|--|
+| `ToggleAlphaRing.cs` | Source code for the toggle |
+| `app.manifest` | Makes the exe ask for administrator rights, which game folders under `Program Files` need |
+| `build.bat` | Compiles the two files above into `Toggle-AlphaRing.exe` |
+
 ### Usage
 Toggle menu: `F4` or `Controller Back` + `Controller Start`
 
